@@ -3,20 +3,29 @@
 
 import React from "react";
 
-class MyComponent extends React.Component{
-
+class MyComponent extends React.Component {
     state = {
         name: 'hieu',
         address: 'hanoi',
         age: 25
     };
-    //jsx cho phep biet code java trong gi do
-    //ben trong jsx chi duoc 1 phan tu: han che
-    render(){
-        return(
+
+    handleClick = (event) => {
+        console.log("clickmede");
+        console.log("toi la");
+
+    }
+
+    handleOnMouseOver = (event) => {
+        console.log(event.pageX);
+    }
+
+    render() {
+        return (
             <div>
-                toi la {this.state.name} va toi o {this.state.address}
-            
+                Tôi là {this.state.name} và tôi ở {this.state.address}
+                <button onMouseEnter={this.handleOnMouseOver}>Hover me</button>
+                <button onClick={this.handleClick}>Click me</button>
             </div>
         );
     }
